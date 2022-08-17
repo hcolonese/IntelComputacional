@@ -20,6 +20,8 @@ private:
 public:
     float peso;
     int id;
+    int idBestGroupInsert;
+    float sumBeneficio;
     void setId(int id);
 
     float beneficio;

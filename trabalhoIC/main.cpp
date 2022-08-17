@@ -24,7 +24,7 @@ void readSolutionAndQuantify(const string& instanceName, const string& fileOutNa
 
 int main(int argc, char** argv)
 {
-
+    srand(time(nullptr));
     if(argc != 3)
     {
         cout << "Entrada errada." << endl;
@@ -42,16 +42,21 @@ int main(int argc, char** argv)
 
 
     cout << endl << "------------------------------------" << endl;
-    Solution sol = Heuristics::greedyReativoAlgoritm(grafo, 0);
+    Solution sol2 = Heuristics::greedyReativoAlgoritm(grafo, 0);
+    // Solution sol2 = Heuristics::greedyAlgorithm(grafo, 0.5);
+    // Solution sol = Heuristics::VND_CCP(grafo,10);
     // Solution sol2 = Heuristics::constructive(grafo, 0);
-    cout << "solucao 1" << endl;
-    cout << "-----------------" <<endl; 
-    cout << sol.getValorSolucaoFinal() << endl;
-    sol.printSolution();
-    // cout << "solucao 2 " << endl;
+    // cout << "solucao 1" << endl;
     // cout << "-----------------" <<endl; 
-    // cout << sol2.getValorSolucaoFinal() << endl;
-    // sol2.printSolution();
+    // cout << sol.getValorSolucaoFinal() << endl;
+    // sol.printSolution();
+    cout << "-----------------" <<endl;
+    cout << "-----------------" <<endl;
+    cout << "solucao 2 " << endl;
+    cout << "-----------------" <<endl; 
+    cout << sol2.getValorSolucaoFinal() << endl;
+    sol2.printSolution();
+    cout << sol2.retornaSolucao()<< endl;
 
     cout << "\tTempo gasto: " << fixed << (double) (clock() - tStart) / CLOCKS_PER_SEC << "s" << endl << endl;
 
